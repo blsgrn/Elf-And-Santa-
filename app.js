@@ -32,25 +32,27 @@ function randomPosition(obj){
 
 randomPosition(santaObj);
 
-if (isTouching(elfObj, santaObj)) {
-    randomPosition(santaObj);
-};
+
+
 
 window.addEventListener('keydown', function(evt){
     if(evt.key === 'ArrowLeft'){
         elfObj.style.transform = `scale(-1, 1)`;
         moveLeft(elfObj, 30);
-    };
-    if(evt.key === 'ArrowRight'){
+    }
+    else if(evt.key === 'ArrowRight'){
         elfObj.style.transform = `scale(1, 1)`;
         moveRight(elfObj, 30);
-    };
-    if(evt.key === 'ArrowUp'){
+    }
+    else if(evt.key === 'ArrowUp'){
         moveUp(elfObj, 30);
-    };
-    if(evt.key === 'ArrowDown'){
+    }
+    else if(evt.key === 'ArrowDown'){
         moveDown(elfObj, 30);
-    };
+    }
+    if (isTouching(elfObj, santaObj)) {
+        randomPosition(santaObj);
+    }
 } );
 
 function moveLeft(obj, dist){
